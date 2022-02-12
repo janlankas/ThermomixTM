@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+nav,
+section {
+  padding: 0 7em;
+}
+
+@media (max-width: 992px) {
+  nav,
+  section {
+    padding: 0 2em;
+  }
+}
+/* GROUPIES ;)) */
+.header {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4.5rem;
+  padding: 6rem 0;
+}
+/* LANDING */
+.landing {
+  padding: 0;
+}
+.carousel .carousel-item {
+  min-height: 90vh;
+}
+
+.item-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/6.jpg);
+  object-fit: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.item-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/13.jpg);
+  object-fit: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.item-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/11.jpg);
+  object-fit: cover;
+  height: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+/* UVOD */
+.uvod {
+  min-height: 100vh;
+}
+.uvod-header {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.uvod-text {
+  font-size: 1.5rem;
+  max-width: 70%;
+}
+
+.tm-skills {
+  margin: 4em 0;
+}
+
+.skill-container {
+  height: 151px;
+  width: 140px;
+  border: 1px solid #eeeeee;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  margin-right: 4rem;
+  margin-top: 4rem;
+}
+.skill-icon {
+  width: 70%;
+  margin: 0.8rem 0;
+}
+
+.skill-container p {
+  padding: 0.5em 0;
+  font-size: 1.25rem;
+}
+
+.tm-img {
+  float: right;
+  width: 80%;
+}
+@media (max-width: 1400px) {
+  .tm-img {
+    width: 70%;
+  }
+  .uvod-header {
+    font-size: 2.25rem;
+  }
+  .uvod-text {
+    font-size: 1.25rem;
+  }
+  .skill-container {
+    margin-top: 2rem;
+    margin-right: 1.5rem;
+  }
+}
+@media (max-width: 992px) {
+  .uvod-header {
+    font-size: 2rem;
+  }
+  .uvod-text {
+    max-width: 100%;
+    font-size: 1.25rem;
+  }
+
+  .tm-img {
+    width: 30vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .tm-skills .row {
+    justify-content: center;
+  }
+  .tm-img {
+    width: 40%;
+  }
+}
+
+@media (max-height: 768px) {
+  .tm-img {
+    width: 50%;
+  }
+}
+
+/* O NAS */
+.nas-img,
+.nas-img2 {
+  max-width: 80%;
+  margin-bottom: 4rem;
+}
+
+.nas-img2 {
+  margin-top: 4rem;
+}
+
+@media (max-width: 1280px) {
+  .nas-img,
+  .nas-img2 {
+    max-width: 100%;
+  }
+}
+
+.recept-img {
+  max-width: 80%;
+}
+
+.recept-box {
+  border-radius: 20px;
+  border: 1px solid #eeee;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  max-width: 25%;
+  margin: 2rem;
+}
+
+@media (max-width: 992px) {
+  .recept-box {
+    min-width: 100%;
+  }
+}
+
+.dalsi-btn button {
+  padding: 0.6em 0.4em;
+  margin: 1em;
+
+  border-radius: 10px;
+  font-size: 1.5rem;
+
+  background: #008331;
+  color: white;
+}
+
+/* FORM */
+.kontakt {
+  padding: 0 20em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+}
+
+form input,
+form textarea {
+  border-radius: 20px;
+  border: 1px solid #eeee;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+
+  margin: 0.6rem 0;
+  padding: 1.25rem;
+
+  background: #eeee;
+
+  font-size: 1rem;
+}
+
+.recept-btn,
+.submit-btn {
+  padding: 0.6em 1em;
+  margin: 1em 0;
+
+  border-radius: 10px;
+  font-size: 1.5rem;
+
+  background: #008331;
+  color: white;
+  max-width: 60%;
+}
+
+@media (max-width: 992px) {
+  .kontakt {
+    text-align: center;
+    padding: 0 2em;
+  }
+
+  form {
+    max-width: 100%;
+  }
+}
