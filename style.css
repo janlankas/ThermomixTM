@@ -2,28 +2,31 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Ubuntu", sans-serif;
 }
 
+/* GROUPIES ;)) */
 nav,
 section {
   padding: 0 7em;
 }
 
-@media (max-width: 992px) {
-  nav,
-  section {
-    padding: 0 2em;
-  }
-}
-/* GROUPIES ;)) */
 .header {
   font-family: "Montserrat", sans-serif;
   font-size: 4.5rem;
   padding: 6rem 0;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.116);
+  z-index: 100;
 }
 /* LANDING */
 .landing {
@@ -31,27 +34,27 @@ section {
 }
 
 .carousel-item {
-  height: 78rem;
-}
-@media (max-width: 992px) {
-  .carousel-item {
-    height: 35rem;
-  }
+  height: 100vh;
+  background: black;
+  color: white;
 }
 
-@media (max-width: 1200px) {
-  .carousel-item {
-    height: 45rem;
-  }
-}
-.overlay-image {
+.landing-desc {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  background-position: center;
-  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.landing-header {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  font-size: 5rem;
+}
+
+.landing-text {
+  font-size: 2.2rem;
 }
 /* UVOD */
 .uvod {
@@ -65,7 +68,7 @@ section {
 
 .uvod-text {
   font-size: 1.5rem;
-  max-width: 70%;
+  max-width: 80%;
 }
 
 .tm-skills {
@@ -95,49 +98,6 @@ section {
   float: right;
   width: 80%;
 }
-@media (max-width: 1400px) {
-  .tm-img {
-    width: 70%;
-  }
-  .uvod-header {
-    font-size: 2.25rem;
-  }
-  .uvod-text {
-    font-size: 1.25rem;
-  }
-  .skill-container {
-    margin-top: 2rem;
-    margin-right: 1.5rem;
-  }
-}
-@media (max-width: 992px) {
-  .uvod-header {
-    font-size: 2rem;
-  }
-  .uvod-text {
-    max-width: 100%;
-    font-size: 1.25rem;
-  }
-
-  .tm-img {
-    width: 30vh;
-  }
-}
-
-@media (max-width: 576px) {
-  .tm-skills .row {
-    justify-content: center;
-  }
-  .tm-img {
-    width: 40%;
-  }
-}
-
-@media (max-height: 768px) {
-  .tm-img {
-    width: 50%;
-  }
-}
 
 /* O NAS */
 .nas-img,
@@ -150,13 +110,16 @@ section {
   margin-top: 4rem;
 }
 
-@media (max-width: 1280px) {
-  .nas-img,
-  .nas-img2 {
-    max-width: 100%;
-  }
+.recept {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.recept h4 {
+  margin: 1em;
+}
 .recept-img {
   max-width: 80%;
 }
@@ -168,12 +131,52 @@ section {
   padding: 1rem;
   max-width: 25%;
   margin: 2rem;
+  cursor: pointer;
+}
+.video {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.2s linear;
 }
 
-@media (max-width: 992px) {
-  .recept-box {
-    min-width: 100%;
-  }
+.video:hover video {
+  transform: scale(1.1);
+}
+
+.popup-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+.popup-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+}
+
+.popup-video span {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 4rem;
+  color: white;
+  font-weight: bolder;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .dalsi-btn button {
@@ -224,8 +227,74 @@ form textarea {
   color: white;
   max-width: 60%;
 }
+.overlay-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+}
+/* ====== MEDIA QUERIES ====== */
 
+/* EXTRA EXTRA Large */
+@media (max-width: 1400px) {
+  .uvod-header {
+    font-size: 2.25rem;
+  }
+  .uvod-text {
+    font-size: 1.25rem;
+  }
+  .skill-container {
+    margin-top: 2rem;
+    margin-right: 1.5rem;
+  }
+  .kontakt {
+    padding: 0 10em;
+  }
+  .landing-header {
+    font-size: 4rem;
+  }
+}
+/* EXTRA Large */
+@media (max-width: 1280px) {
+  .nas-img,
+  .nas-img2 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .landing-header {
+    font-size: 3.5rem;
+  }
+}
+
+/* Large */
 @media (max-width: 992px) {
+  nav,
+  section {
+    padding: 0 2em;
+  }
+  .uvod-header {
+    font-size: 2rem;
+  }
+  .uvod-text {
+    max-width: 100%;
+    font-size: 1.25rem;
+  }
+  .landing-header {
+    font-size: 3rem;
+  }
+  .landing-text {
+    font-size: 1.3rem;
+  }
+
+  .recept-box {
+    min-width: 100%;
+  }
   .kontakt {
     text-align: center;
     padding: 0 2em;
@@ -235,3 +304,28 @@ form textarea {
     max-width: 100%;
   }
 }
+
+/* Medium */
+
+@media (max-height: 768px) {
+}
+@media (max-width: 768px) {
+  .popup-video video {
+    width: 95%;
+  }
+}
+
+/* X small */
+
+@media (max-width: 576px) {
+  .tm-skills .row {
+    justify-content: center;
+  }
+
+  .overlay-image {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* VIDEO BOX */
