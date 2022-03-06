@@ -237,6 +237,10 @@ form textarea {
   background-size: cover;
   opacity: 0.5;
 }
+
+.contact-info {
+  font-size: 1.2rem;
+}
 /* ====== MEDIA QUERIES ====== */
 
 /* EXTRA EXTRA Large */
