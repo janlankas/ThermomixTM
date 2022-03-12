@@ -67,7 +67,7 @@ section {
 }
 
 .uvod-text {
-  font-size: 1.5rem;
+  font-size: 1.23rem;
   max-width: 80%;
 }
 
@@ -239,7 +239,14 @@ form textarea {
 }
 
 .contact-info {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+.poradce {
+  color: grey;
+  font-size: 1.22rem;
+}
+.contact-top {
+  margin: 2rem 0;
 }
 /* ====== MEDIA QUERIES ====== */
 
