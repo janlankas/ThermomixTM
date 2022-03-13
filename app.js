@@ -1,3 +1,4 @@
+
 document.querySelectorAll("video").forEach(vid => {
     vid.onclick = () => {
         document.querySelector(".popup-video").style.display = "block";
@@ -7,5 +8,7 @@ document.querySelectorAll("video").forEach(vid => {
 
 document.querySelector('.popup-video span').onclick = () => {
     document.querySelector(".popup-video").style.display = "none";
-    document.querySelector(" video").muted = vid.getAttribute("muted")
 }
+
+
+
