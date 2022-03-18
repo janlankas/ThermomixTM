@@ -43,17 +43,20 @@ section {
 .landing {
   padding: 0;
 }
-
-.carousel-item {
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.685);
-  color: white;
+.landing-container {
+  background-image: url("img/6.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .landing-desc {
   position: absolute;
+  background-color: rgba(0, 0, 0, 0.33);
+  padding: 2rem;
   top: 50%;
   left: 50%;
+  color: white;
   transform: translate(-50%, -50%);
 }
 .landing-header {
@@ -92,8 +95,8 @@ section {
   border: 1px solid #eeeeee;
   border-radius: 20px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-  margin-right: 4rem;
-  margin-top: 4rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
 }
 .skill-icon {
   width: 70%;
@@ -115,6 +118,11 @@ section {
 .nas-img2 {
   max-width: 80%;
   margin-bottom: 4rem;
+}
+
+.nas-img-mobile,
+.nas-img2-mobile {
+  display: none;
 }
 
 .nas-img2 {
@@ -144,10 +152,25 @@ section {
   margin: 2rem;
   cursor: pointer;
 }
+
+.recept-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
 .video {
-  height: 100%;
+  height: 320px;
   width: 100%;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.video img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  transition: 0.2s linear;
 }
 .video video {
   height: 100%;
@@ -156,11 +179,14 @@ section {
   transition: 0.2s linear;
 }
 
-.video:hover video {
+.video:hover video,
+.video:hover img {
   transform: scale(1.1);
 }
 
-.popup-video {
+.popup-video,
+.popup-img {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -168,18 +194,20 @@ section {
   background: rgba(0, 0, 0, 0.8);
   height: 100%;
   width: 100%;
-  display: none;
 }
 
-.popup-video video {
+.popup-video video,
+.popup-img img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 750px;
+  object-fit: cover;
 }
 
-.popup-video span {
+.popup-video span,
+.popup-img span {
   position: absolute;
   top: 5px;
   right: 20px;
@@ -292,9 +320,15 @@ form textarea {
 }
 /* EXTRA Large */
 @media (max-width: 1280px) {
+  .nas-img-mobile,
+  .nas-img2-mobile {
+    max-width: 100%;
+    display: block;
+    padding: 4rem 0;
+  }
   .nas-img,
   .nas-img2 {
-    max-width: 100%;
+    display: none;
   }
 }
 
@@ -342,7 +376,8 @@ form textarea {
 @media (max-height: 768px) {
 }
 @media (max-width: 768px) {
-  .popup-video video {
+  .popup-video video,
+  .popup-img img {
     width: 95%;
   }
 }
