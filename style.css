@@ -178,7 +178,6 @@ section {
   transition: 0.2s linear;
 }
 
-.video:hover video,
 .video:hover img {
   transform: scale(1.1);
 }
